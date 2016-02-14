@@ -11,6 +11,12 @@
   
   <h3>Instructions</h3>
   <p><%= @recipe.instructions %></p>
+  
+  <h3>Calories</h3>
+  <p><%= @recipe.calories %></p>
+  
+  <p>Category: <%= link_to h(@recipe.category.name), category_path(@recipe.category.id) rescue 'No category found' %></p>
+
 </article>
 
 <p><%= link_to 'Back', recipes_path %></p>

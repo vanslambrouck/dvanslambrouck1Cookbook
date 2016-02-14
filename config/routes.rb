@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :recipes
+  resources :recipes, :categories
   #get "/about", controller: 'home', action: 'about', as: 'about'
   #get 'about', to: 'home#about'
   get '/about', to: 'home#about', as: 'about'
