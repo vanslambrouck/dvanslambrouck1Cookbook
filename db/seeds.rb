@@ -14,3 +14,5 @@ Category.create name: 'Breakfast'
 Category.create name: 'Sandwiches'
 
 puts 'Created categories.'
+
+User.create :username => "admin", :password => "password", :password_confirmation => "password"
