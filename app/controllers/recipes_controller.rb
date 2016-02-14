@@ -1,3 +1,8 @@
+#=Recipes
+# Recipes are added, removed, maintained, and viewed using
+# the actions in this controller.
+#==Authentication
+# There is no authentication on this controller
 class RecipesController < ApplicationController
   before_action :get_categories, :only =>[:new, :edit, :create, :update]
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
@@ -5,6 +10,9 @@ class RecipesController < ApplicationController
   
   # GET /recipes
   # GET /recipes.json
+  #===Index
+  # This method defines what recipes will show when visiting the page.
+  #---
   def index
     if params[:queryCategory].present? || params[:q].present?
       @recipes = Recipe.find_all_by_query(params[:q], params[:queryCategory])

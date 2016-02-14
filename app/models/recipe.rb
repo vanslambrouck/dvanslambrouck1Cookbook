@@ -3,6 +3,10 @@ class Recipe < ActiveRecord::Base
   validates_presence_of :title, :ingredients, :instructions
   validates :title, uniqueness: true
   
+  #==Find All By Query
+  # This static method allows for recipe searches.  It will accept up to
+  # two params allowing the user to search by keyword and/or filter by category
+  # as well.
   def self.find_all_by_query(query = "*", queryCategory = false )
     query = query.downcase
     query = "%#{query}%"
